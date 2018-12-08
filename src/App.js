@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import './reset.css'
 import './App.css';
 
-import OnlineUsers from './components/OnlineUsers'
+// Import Components
+import OnlineUsers from './components/OnlineUsers/OnlineUsers'
 
 class App extends Component {
   render() {

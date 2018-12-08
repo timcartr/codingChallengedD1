@@ -4,10 +4,10 @@ import React, { Component } from 'react'
 import './OnlineUsers.css'
 
 // Components
-import UserBlock from './UserBlock';
+import UserBlock from './UserBlock/UserBlock';
 
-// Test Logic
-import {toggle, getProducts} from '../logic/logic'
+// Testing Logic
+import {toggle, getUsers} from '../../logic/logic'
 
 export default class OnlineUsers extends Component {
   constructor(){
@@ -19,7 +19,7 @@ export default class OnlineUsers extends Component {
   }
 
   componentDidMount(){
-    getProducts().then(res => {
+    getUsers().then(res => {
     this.setState({
       users: res.data
     })  

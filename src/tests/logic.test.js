@@ -1,4 +1,4 @@
-const { toggle, getProducts } = require('../logic/logic')
+const { toggle, getUsers } = require('../logic/logic')
 
 describe('Tests Show/Hide button', () => {
   test('can toggle button text from Show Users to Hide Users', () => {
@@ -11,31 +11,31 @@ describe('Tests Show/Hide button', () => {
 
 describe('Can get user data from API', () => {
   test(`Gets status 200`, () => {
-    return getProducts().then(res => {
+    return getUsers().then(res => {
       expect(res.status).toBe(200)
     })
   })
 
   test('res.data exists', () => {
-    return getProducts().then(res => {
+    return getUsers().then(res => {
       expect(res.data).toBeDefined();
     });
   });
 
   test('gets back first name', () => {
-    return getProducts().then(res => {
+    return getUsers().then(res => {
       expect(res.data[0].name).toBeDefined();
     });
   });
 
   test('gets back last name', () => {
-    return getProducts().then(res => {
+    return getUsers().then(res => {
       expect(res.data[0].surname).toBeDefined();
     });
   });
 
   test('gets back avatar', () => {
-    return getProducts().then(res => {
+    return getUsers().then(res => {
       expect(res.data[0].photo).toBeDefined();
     });
   });

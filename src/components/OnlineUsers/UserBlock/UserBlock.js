@@ -1,11 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 // CSS
 import './UserBlock.css'
 
-export default class UserBlock extends Component {
-  render() {
-    let user = this.props.user
+export default function UserBlock(props){
+    let user = props.user
     return (
       <div>
         <div className='user-block'>
@@ -18,4 +17,3 @@ export default class UserBlock extends Component {
       </div>
     )
   }
-}

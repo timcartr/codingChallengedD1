@@ -4,8 +4,8 @@ const logic = {
   toggle(value) {
     return !value
   },
-  getProducts(){
-    return axios.get('https://uinames.com/api/?amount=12&ext&region=united%20states')
+  getUsers(){
+    return axios.get('https://uinames.com/api/?amount=6&ext&region=united%20states')
   }
 }
 
