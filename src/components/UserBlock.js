@@ -5,7 +5,7 @@ export default class UserBlock extends Component {
     let user = this.props.user
     return (
       <div>
-        <div key={user.index} className='user-block'>
+        <div className='user-block'>
           <div className='user-info'>
             <img className='img--user-info' src={user.photo} alt=""/>
             <h2 className='h2--user-info'>{user.name} {user.surname}</h2>

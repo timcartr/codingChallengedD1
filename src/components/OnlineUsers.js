@@ -1,7 +1,13 @@
 import React, { Component } from 'react'
-import axios from 'axios'
+
+// CSS
 import './OnlineUsers.css'
+
+// Components
 import UserBlock from './UserBlock';
+
+// Test Logic
+import {toggle, getProducts} from '../logic/logic'
 
 export default class OnlineUsers extends Component {
   constructor(){
@@ -13,8 +19,7 @@ export default class OnlineUsers extends Component {
   }
 
   componentDidMount(){
-    axios.get('https://uinames.com/api/?amount=12&ext&region=united%20states').then(res => {
-      // console.log(res.data)
+    getProducts().then(res => {
     this.setState({
       users: res.data
     })  
@@ -23,12 +28,11 @@ export default class OnlineUsers extends Component {
 
   handleClick(){
     this.setState({
-      showOnlineUsers: !this.state.showOnlineUsers
+      showOnlineUsers: toggle(this.state.showOnlineUsers)
     })
   }
 
   render() {
-    console.log(this.state.showOnlineUsers)
     return (
       <div>
         <header>
@@ -37,14 +41,14 @@ export default class OnlineUsers extends Component {
         </header>
         <div className={this.state.showOnlineUsers ? 'collapsible' : 'collapsible--hidden'}>
           <div className='online-users'>
-          {this.state.users[0] 
-          ? this.state.users.map((user,index) => {
-            return(
-              <UserBlock user={user} index={index}/>
-              )
-            })
+            {this.state.users[0] 
+            ? this.state.users.map((user,index) => {
+              return(
+                <UserBlock user={user} key={index}/>
+                )
+              })
             : null
-          }
+            }
           </div>
         </div>
       </div>
