@@ -34,13 +34,13 @@ export default class OnlineUsers extends Component {
 
   render() {
     return (
-      <div>
+      <div className='online-users'>
         <header>
-          <h1 className='h1--header'>Online Users</h1>
-          <button className='btn--header' onClick={() => this.handleClick()}>{this.state.showOnlineUsers ? 'Hide Users' : 'Show Users'}</button>
+          <h1 className='header__h1--header'>Online Users</h1>
+          <button className='header__btn--header' onClick={() => this.handleClick()}>{this.state.showOnlineUsers ? 'Hide Users' : 'Show Users'}</button>
         </header>
         <div className={this.state.showOnlineUsers ? 'collapsible' : 'collapsible--hidden'}>
-          <div className='online-users'>
+          <div className='users-list'>
             {this.state.users[0] 
             ? this.state.users.map((user,index) => {
               return(
